@@ -37,7 +37,7 @@
 
     <main class="w-[80%] mx-auto">
 
-        <section id="header" class="w-[11/12]">
+        <section id="header" class="w-[11/12] sticky top-0 z-10 bg-[#F8FAFC]">
 
             <h1 id="title-text" class="font-bold text-4xl text-[#002C5C] mt-9">Job Application Tracker</h1>
 
@@ -105,6 +105,26 @@
 
         </section>
 
+        <!-- Interview Section-->
+        <section id="interview-section" class="hidden">
+
+
+            <div id="interview-card-container">
+
+            </div>
+
+
+            <div id="no-interview" class="hidden">
+                <div class="flex flex-col space-y-5 justify-center items-center py-20">
+                    <img src="./Resources/assignment_7959593 1.png" alt="">
+                    <h1 class="text-2xl">No jobs available</h1>
+                    <p>Check back soon for new job opportunities</p>
+                </div>
+
+            </div>
+
+        </section>
+
 
         <section id="card-section">
 
@@ -120,35 +140,35 @@
                     </button>
 
 
-                    <h2 class="text-xl font-semibold text-blue-900">Mobile First Corp</h2>
+                    <h2 class=" company-name text-xl font-semibold text-blue-900">Mobile First Corp</h2>
 
-                    <p class="text-gray-600 mt-1">React Native Developer</p>
+                    <p class="job-role text-gray-600 mt-1">React Native Developer</p>
 
 
-                    <p class="text-gray-500 mt-3">Remote • Full-time • $130,000 - $175,000</p>
+                    <p class="job-salary text-gray-500 mt-3">Remote • Full-time • $130,000 - $175,000</p>
 
 
 
                     <div class="status-div">
 
                         <p id="status-badge"
-                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            class="status-badge mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
                             NOT APPLIED</p>
 
                     </div>
 
 
-                    <p class="text-gray-600 mt-4">Build cross-platform mobile applications using React Native.
+                    <p class="job-title text-gray-600 mt-4">Build cross-platform mobile applications using React Native.
                         Work on products used by millions of users worldwide.</p>
 
 
                     <div class="flex gap-3 mt-6">
 
-                        <button id="btn-interview"
-                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+                        <button id="btn-interview-id1"
+                            class="btn-interview px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
 
-                        <button id="btn-rejected"
-                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+                        <button id="btn-rejected-id1"
+                            class="btn-rejected px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
 
 
 
@@ -173,12 +193,12 @@
                     </button>
 
 
-                    <h2 class="text-xl font-semibold text-blue-900">WebFlow Agency</h2>
+                    <h2 class="text-xl company-name font-semibold text-blue-900">WebFlow Agency</h2>
 
-                    <p class="text-gray-600 mt-1">Web Designer & Developer</p>
+                    <p class="job-role text-gray-600 mt-1">Web Designer & Developer</p>
 
 
-                    <p class="text-gray-500 mt-3">Los Angeles, CA
+                    <p class="job-salary text-gray-500 mt-3">Los Angeles, CA
                         •
                         Part-time
                         •
@@ -187,23 +207,24 @@
                     <div class="status-div">
 
                         <p id="status-badge"
-                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            class="status-badge mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
                             NOT APPLIED</p>
 
                     </div>
 
 
-                    <p class="text-gray-600 mt-4">Create stunning web experiences for high-profile clients. Must have
+                    <p class="job-title text-gray-600 mt-4">Create stunning web experiences for high-profile clients.
+                        Must have
                         portfolio and experience with modern web design trends.</p>
 
 
                     <div class="flex gap-3 mt-6">
 
-                        <button id="btn-interview"
-                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+                        <button id="btn-interview-id2"
+                            class="btn-interview px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
 
-                        <button id="btn-rejected"
-                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+                        <button id="btn-rejected-id2"
+                            class="btn-rejected px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
 
 
 
@@ -223,12 +244,12 @@
                     </button>
 
 
-                    <h2 class="text-xl font-semibold text-blue-900">DataViz Solutions</h2>
+                    <h2 class="company-name text-xl font-semibold text-blue-900">DataViz Solutions</h2>
 
-                    <p class="text-gray-600 mt-1">Data Visualization Specialist</p>
+                    <p class="job-role text-gray-600 mt-1">Data Visualization Specialist</p>
 
 
-                    <p class="text-gray-500 mt-3">Boston, MA
+                    <p class="job-salary text-gray-500 mt-3">Boston, MA
                         •
                         Full-time
                         •
@@ -239,24 +260,25 @@
                     <div class="status-div">
 
                         <p id="status-badge"
-                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            class="status-badge mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
                             NOT APPLIED</p>
 
                     </div>
 
 
-                    <p class="text-gray-600 mt-4">Transform complex data into compelling visualizations. Required
+                    <p class="job-title text-gray-600 mt-4">Transform complex data into compelling visualizations.
+                        Required
                         skills: D3.js, React, and strong analytical thinking.
                     </p>
 
 
                     <div class="flex gap-3 mt-6">
 
-                        <button id="btn-interview"
-                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+                        <button id="btn-interview-id3"
+                            class="btn-interview px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
 
-                        <button id="btn-rejected"
-                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+                        <button id="btn-rejected-id3"
+                            class="btn-rejected px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
 
 
 
@@ -279,12 +301,12 @@
                     </button>
 
 
-                    <h2 class="text-xl font-semibold text-blue-900">CloudFirst Inc</h2>
+                    <h2 class="company-name text-xl font-semibold text-blue-900">CloudFirst Inc</h2>
 
-                    <p class="text-gray-600 mt-1">Backend Developer</p>
+                    <p class="job-role text-gray-600 mt-1">Backend Developer</p>
 
 
-                    <p class="text-gray-500 mt-3">Seattle, WA
+                    <p class="job-salary text-gray-500 mt-3">Seattle, WA
                         •
                         Full-time
                         •
@@ -295,23 +317,24 @@
                     <div class="status-div">
 
                         <p id="status-badge"
-                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            class="status-badge mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
                             NOT APPLIED</p>
 
                     </div>
 
 
-                    <p class="text-gray-600 mt-4">Design and maintain scalable backend systems using Python and AWS.
+                    <p class="job-title text-gray-600 mt-4">Design and maintain scalable backend systems using Python
+                        and AWS.
                         Work with modern DevOps practices and cloud infrastructure.</p>
 
 
                     <div class="flex gap-3 mt-6">
 
-                        <button id="btn-interview"
-                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+                        <button id="btn-interview-id4"
+                            class="btn-interview px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
 
-                        <button id="btn-rejected"
-                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+                        <button id="btn-rejected-id4"
+                            class="btn-rejected px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
 
 
 
@@ -334,12 +357,12 @@
                     </button>
 
 
-                    <h2 class="text-xl font-semibold text-blue-900">Innovation Labs</h2>
+                    <h2 class="company-name text-xl font-semibold text-blue-900">Innovation Labs</h2>
 
-                    <p class="text-gray-600 mt-1">UI/UX Engineer</p>
+                    <p class="job-role text-gray-600 mt-1">UI/UX Engineer</p>
 
 
-                    <p class="text-gray-500 mt-3">Austin, TX
+                    <p class="job-salary text-gray-500 mt-3">Austin, TX
                         •
                         Full-time
                         •
@@ -350,23 +373,24 @@
                     <div class="status-div">
 
                         <p id="status-badge"
-                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            class="status-badge mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
                             NOT APPLIED</p>
 
                     </div>
 
 
-                    <p class="text-gray-600 mt-4">Create beautiful and functional user interfaces for our suite of
+                    <p class="job-title text-gray-600 mt-4">Create beautiful and functional user interfaces for our
+                        suite of
                         products. Strong design skills and frontend development expertise required.</p>
 
 
                     <div class="flex gap-3 mt-6">
 
-                        <button id="btn-interview"
-                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+                        <button id="btn-interview-id5"
+                            class="btn-interview px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
 
-                        <button id="btn-rejected"
-                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+                        <button id="btn-rejected-id5"
+                            class="btn-rejected px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
 
 
 
@@ -389,12 +413,12 @@
                     </button>
 
 
-                    <h2 class="text-xl font-semibold text-blue-900">MegaCorp Solutions</h2>
+                    <h2 class="company-name text-xl font-semibold text-blue-900">MegaCorp Solutions</h2>
 
-                    <p class="text-gray-600 mt-1">JavaScript Developer</p>
+                    <p class="job-role text-gray-600 mt-1">JavaScript Developer</p>
 
 
-                    <p class="text-gray-500 mt-3">New York, NY
+                    <p class="job-salary text-gray-500 mt-3">New York, NY
                         •
                         Full-time
                         •
@@ -405,24 +429,25 @@
                     <div class="status-div">
 
                         <p id="status-badge"
-                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            class="status-badge mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
                             NOT APPLIED</p>
 
                     </div>
 
 
-                    <p class="text-gray-600 mt-4">Build enterprise applications with JavaScript and modern frameworks.
+                    <p class="job-title text-gray-600 mt-4">Build enterprise applications with JavaScript and modern
+                        frameworks.
                         We offer competitive compensation, health insurance, and professional development opportunities.
                     </p>
 
 
                     <div class="flex gap-3 mt-6">
 
-                        <button id="btn-interview"
-                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+                        <button id="btn-interview-id6"
+                            class="btn-interview px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
 
-                        <button id="btn-rejected"
-                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+                        <button id="btn-rejected-id6"
+                            class="btn-rejected px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
 
 
 
@@ -445,12 +470,12 @@
                     </button>
 
 
-                    <h2 class="text-xl font-semibold text-blue-900">StartupXYZ</h2>
+                    <h2 class="company-name text-xl font-semibold text-blue-900">StartupXYZ</h2>
 
-                    <p class="text-gray-600 mt-1">Full Stack Engineer</p>
+                    <p class="job-role text-gray-600 mt-1">Full Stack Engineer</p>
 
 
-                    <p class="text-gray-500 mt-3">Remote
+                    <p class="job-salary text-gray-500 mt-3">Remote
                         •
                         Full-time
                         •
@@ -461,23 +486,23 @@
                     <div class="status-div">
 
                         <p id="status-badge"
-                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            class="status-badge mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
                             NOT APPLIED</p>
 
                     </div>
 
 
-                    <p class="text-gray-600 mt-4">Join our fast-growing startup and work on our core platform.
+                    <p class="job-title text-gray-600 mt-4">Join our fast-growing startup and work on our core platform.
                         Experience with Node.js and React required. Great benefits and equity package included.</p>
 
 
                     <div class="flex gap-3 mt-6">
 
-                        <button id="btn-interview"
-                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+                        <button id="btn-interview-id7"
+                            class="btn-interview px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
 
-                        <button id="btn-rejected"
-                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+                        <button id="btn-rejected-id7"
+                            class="btn-rejected px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
 
 
 
@@ -500,12 +525,12 @@
                     </button>
 
 
-                    <h2 class="text-xl font-semibold text-blue-900">TechCorp Industries</h2>
+                    <h2 class="company-name text-xl font-semibold text-blue-900">TechCorp Industries</h2>
 
-                    <p class="text-gray-600 mt-1">Senior Frontend Developer</p>
+                    <p class="job-role text-gray-600 mt-1">Senior Frontend Developer</p>
 
 
-                    <p class="text-gray-500 mt-3">San Francisco, CA
+                    <p class="job-salary text-gray-500 mt-3">San Francisco, CA
                         •
                         Full-time
                         •
@@ -516,24 +541,25 @@
                     <div class="status-div">
 
                         <p id="status-badge"
-                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            class="status-badge mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
                             NOT APPLIED</p>
 
                     </div>
 
 
-                    <p class="text-gray-600 mt-4">We are looking for an experienced Frontend Developer to build scalable
+                    <p class="job-title text-gray-600 mt-4">We are looking for an experienced Frontend Developer to
+                        build scalable
                         web applications using React and TypeScript. You will work with a talented team on cutting-edge
                         projects.</p>
 
 
                     <div class="flex gap-3 mt-6">
 
-                        <button id="btn-interview"
-                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+                        <button id="btn-interview-id8"
+                            class="btn-interview px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
 
-                        <button id="btn-rejected"
-                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+                        <button id="btn-rejected-id8"
+                            class="btn-rejected px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
 
 
 
