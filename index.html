@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+
+    <!-- Tailwind+DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Styles -->
+
+    <style>
+        * {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8FAFC]">
+
+    <main class="w-[80%] mx-auto">
+
+        <section id="header" class="w-[11/12]">
+
+            <h1 id="title-text" class="font-bold text-4xl text-[#002C5C]">Job Application Tracker</h1>
+
+
+            <div id="count-container" class="grid grid-cols-3 gap-3 py-5">
+
+                <div id="total-div" class="bg-[#FFFFFF] p-5 rounded-xl">
+                    <p>Total</p>
+                    <h2 id="total-count" class="font-bold text-3xl">0</h2>
+                </div>
+
+                <div id="interview-div" class="bg-[#FFFFFF] p-5 rounded-xl">
+                    <p>Interview</p>
+                    <h2 id="interview-count" class="font-bold text-3xl">0</h2>
+                </div>
+
+                <div id="struggle-div" class="bg-[#FFFFFF] p-5 rounded-xl">
+                    <p>Rejected</p>
+                    <h2 id="rejected_count" class="font-bold text-3xl">0</h2>
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <!-- LIne -->
+        <hr class="mt-5">
+
+
+    </main>
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
