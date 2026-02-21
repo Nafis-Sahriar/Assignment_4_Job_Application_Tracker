@@ -11,6 +11,9 @@ const buttonRejectedPage = document.getElementById('btn-rejected-page');
 
 // console.log(buttonRejectedPage);
 
+let interviewList = [];
+let rejectedList =[];
+
 
 
 function btnAnimation(id)
@@ -37,3 +40,54 @@ function btnAnimation(id)
 
     }
 }
+
+const allContainer = getById('all-card-container');
+
+
+let allCardCount = getById('total-count');
+let littleCount = getById('little-count');
+
+countSetter();
+
+function countSetter()
+{
+    console.log("count setter Running!");
+
+    const count = allContainer.children.length;
+
+    allCardCount.innerText = count;
+    littleCount.innerText = count;
+
+    if(count === 0)
+    {
+        console.log("The section is now empty!");
+
+        let noJobSection = getById('no-job');
+        noJobSection.classList.remove('hidden');
+
+    }
+}
+
+// Delete Button Functionality
+
+const delete_buttons = document.querySelectorAll('.delete');
+
+// console.log(delete_buttons);
+
+for(let deleteButton of delete_buttons)
+{
+    deleteButton.addEventListener('click',function()
+    {
+        deleteButton.parentElement.remove();
+        countSetter();
+    })
+}
+
+// interview section 
+
+
+
+
+
+
+

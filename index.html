@@ -71,7 +71,7 @@
 
             <h1 class="font-bold text-2xl">Available Jobs</h1>
             <p>
-                <span class="text-gray-600">8 </span>
+                <span id="little-count" class="text-gray-600">0 </span>
                 <span class="text-gray-600">Jobs</span>
             </p>
 
@@ -93,6 +93,14 @@
 
         </section>
 
+          <section id="no-job" class="hidden flex flex-col space-y-5 justify-center items-center py-20">
+
+            <img src="./Resources/assignment_7959593 1.png" alt="">
+            <h1 class="text-2xl">No jobs available</h1>
+            <p>Check back soon for new job opportunities</p>
+
+        </section>
+
 
         <section id="card-section">
 
@@ -103,7 +111,7 @@
                 <div id="card" class=" bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
 
                     <button id="delete-btn"
-                        class="absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-red-300">
+                        class="delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-red-300">
                         <img src="./Resources/Trash.png" alt="">
                     </button>
 
@@ -142,6 +150,396 @@
 
                     </div>
 
+                    
+
+
+
+
+
+
+
+                </div>
+
+                       <!-- Card-2 - WebFlow Agency -->
+                <div id="card" class=" bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+
+                    <button id="delete-btn"
+                        class=" delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-gray-100">
+                        <img src="./Resources/Trash.png" alt="">
+                    </button>
+
+
+                    <h2 class="text-xl font-semibold text-blue-900">WebFlow Agency</h2>
+
+                    <p class="text-gray-600 mt-1">Web Designer & Developer</p>
+
+
+                    <p class="text-gray-500 mt-3">Los Angeles, CA
+                        •
+                        Part-time
+                        •
+                        $80,000 - $120,000</p>
+
+                    <div class="status-div">
+
+                        <p id="status-badge"
+                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            NOT APPLIED</p>
+
+                    </div>
+
+
+                    <p class="text-gray-600 mt-4">Create stunning web experiences for high-profile clients. Must have
+                        portfolio and experience with modern web design trends.</p>
+
+
+                    <div class="flex gap-3 mt-6">
+
+                        <button id="btn-interview"
+                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+
+                        <button id="btn-rejected"
+                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <!-- Card-3 - DataViz Solutions -->
+                <div id="card" class=" bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+
+                    <button id="delete-btn"
+                        class=" delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-gray-100">
+                        <img src="./Resources/Trash.png" alt="">
+                    </button>
+
+
+                    <h2 class="text-xl font-semibold text-blue-900">DataViz Solutions</h2>
+
+                    <p class="text-gray-600 mt-1">Data Visualization Specialist</p>
+
+
+                    <p class="text-gray-500 mt-3">Boston, MA
+                        •
+                        Full-time
+                        •
+                        $125,000 - $165,000</p>
+
+
+
+                    <div class="status-div">
+
+                        <p id="status-badge"
+                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            NOT APPLIED</p>
+
+                    </div>
+
+
+                    <p class="text-gray-600 mt-4">Transform complex data into compelling visualizations. Required
+                        skills: D3.js, React, and strong analytical thinking.
+                    </p>
+
+
+                    <div class="flex gap-3 mt-6">
+
+                        <button id="btn-interview"
+                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+
+                        <button id="btn-rejected"
+                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <!-- Card-4- CloudFirst Inc-->
+                <div id="card" class=" bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+
+                    <button id="delete-btn"
+                        class=" delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-gray-100">
+                        <img src="./Resources/Trash.png" alt="">
+                    </button>
+
+
+                    <h2 class="text-xl font-semibold text-blue-900">CloudFirst Inc</h2>
+
+                    <p class="text-gray-600 mt-1">Backend Developer</p>
+
+
+                    <p class="text-gray-500 mt-3">Seattle, WA
+                        •
+                        Full-time
+                        •
+                        $140,000 - $190,000</p>
+
+
+
+                    <div class="status-div">
+
+                        <p id="status-badge"
+                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            NOT APPLIED</p>
+
+                    </div>
+
+
+                    <p class="text-gray-600 mt-4">Design and maintain scalable backend systems using Python and AWS.
+                        Work with modern DevOps practices and cloud infrastructure.</p>
+
+
+                    <div class="flex gap-3 mt-6">
+
+                        <button id="btn-interview"
+                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+
+                        <button id="btn-rejected"
+                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <!-- Card - 5 Innovation Labs  -->
+                <div id="card" class=" bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+
+                    <button id="delete-btn"
+                        class="delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-gray-100">
+                        <img src="./Resources/Trash.png" alt="">
+                    </button>
+
+
+                    <h2 class="text-xl font-semibold text-blue-900">Innovation Labs</h2>
+
+                    <p class="text-gray-600 mt-1">UI/UX Engineer</p>
+
+
+                    <p class="text-gray-500 mt-3">Austin, TX
+                        •
+                        Full-time
+                        •
+                        $110,000 - $150,000</p>
+
+
+
+                    <div class="status-div">
+
+                        <p id="status-badge"
+                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            NOT APPLIED</p>
+
+                    </div>
+
+
+                    <p class="text-gray-600 mt-4">Create beautiful and functional user interfaces for our suite of
+                        products. Strong design skills and frontend development expertise required.</p>
+
+
+                    <div class="flex gap-3 mt-6">
+
+                        <button id="btn-interview"
+                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+
+                        <button id="btn-rejected"
+                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <!-- Card - 6 -MegaCorp Solutions -->
+                <div id="card" class=" bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+
+                    <button id="delete-btn"
+                        class="delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-gray-100">
+                        <img src="./Resources/Trash.png" alt="">
+                    </button>
+
+
+                    <h2 class="text-xl font-semibold text-blue-900">MegaCorp Solutions</h2>
+
+                    <p class="text-gray-600 mt-1">JavaScript Developer</p>
+
+
+                    <p class="text-gray-500 mt-3">New York, NY
+                        •
+                        Full-time
+                        •
+                        $130,000 - $170,00</p>
+
+
+
+                    <div class="status-div">
+
+                        <p id="status-badge"
+                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            NOT APPLIED</p>
+
+                    </div>
+
+
+                    <p class="text-gray-600 mt-4">Build enterprise applications with JavaScript and modern frameworks.
+                        We offer competitive compensation, health insurance, and professional development opportunities.
+                    </p>
+
+
+                    <div class="flex gap-3 mt-6">
+
+                        <button id="btn-interview"
+                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+
+                        <button id="btn-rejected"
+                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <!-- Card - 7 -StartupXYZ -->
+                <div id="card" class=" bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+
+                    <button id="delete-btn"
+                        class="delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-gray-100">
+                        <img src="./Resources/Trash.png" alt="">
+                    </button>
+
+
+                    <h2 class="text-xl font-semibold text-blue-900">StartupXYZ</h2>
+
+                    <p class="text-gray-600 mt-1">Full Stack Engineer</p>
+
+
+                    <p class="text-gray-500 mt-3">Remote
+                        •
+                        Full-time
+                        •
+                        $120,000 - $160,000</p>
+
+
+
+                    <div class="status-div">
+
+                        <p id="status-badge"
+                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            NOT APPLIED</p>
+
+                    </div>
+
+
+                    <p class="text-gray-600 mt-4">Join our fast-growing startup and work on our core platform.
+                        Experience with Node.js and React required. Great benefits and equity package included.</p>
+
+
+                    <div class="flex gap-3 mt-6">
+
+                        <button id="btn-interview"
+                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+
+                        <button id="btn-rejected"
+                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <!-- Card - 8 -TechCorp Industries -->
+                <div id="card" class=" bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+
+                    <button id="delete-btn"
+                        class="delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-gray-100">
+                        <img src="./Resources/Trash.png" alt="">
+                    </button>
+
+
+                    <h2 class="text-xl font-semibold text-blue-900">TechCorp Industries</h2>
+
+                    <p class="text-gray-600 mt-1">Senior Frontend Developer</p>
+
+
+                    <p class="text-gray-500 mt-3">San Francisco, CA
+                        •
+                        Full-time
+                        •
+                        $130,000 - $175,000</p>
+
+
+
+                    <div class="status-div">
+
+                        <p id="status-badge"
+                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            NOT APPLIED</p>
+
+                    </div>
+
+
+                    <p class="text-gray-600 mt-4">We are looking for an experienced Frontend Developer to build scalable
+                        web applications using React and TypeScript. You will work with a talented team on cutting-edge
+                        projects.</p>
+
+
+                    <div class="flex gap-3 mt-6">
+
+                        <button id="btn-interview"
+                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+
+                        <button id="btn-rejected"
+                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+
+
+
+                    </div>
+
 
 
 
@@ -166,7 +564,10 @@
 
 
 
+    <script src="./JS/machine.js"></script>
+
     <script src="./JS/script.js"></script>
+    
 </body>
 
 </html>
