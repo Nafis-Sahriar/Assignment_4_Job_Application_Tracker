@@ -39,7 +39,7 @@
 
         <section id="header" class="w-[11/12]">
 
-            <h1 id="title-text" class="font-bold text-4xl text-[#002C5C]">Job Application Tracker</h1>
+            <h1 id="title-text" class="font-bold text-4xl text-[#002C5C] mt-9">Job Application Tracker</h1>
 
 
             <div id="count-container" class="grid grid-cols-3 gap-3 py-5">
@@ -51,12 +51,12 @@
 
                 <div id="interview-div" class="bg-[#FFFFFF] p-5 rounded-xl">
                     <p>Interview</p>
-                    <h2 id="interview-count" class="font-bold text-3xl">0</h2>
+                    <h2 id="interview-count" class="font-bold text-3xl text-green-500">0</h2>
                 </div>
 
                 <div id="rejected-div" class="bg-[#FFFFFF] p-5 rounded-xl">
                     <p>Rejected</p>
-                    <h2 id="rejected_count" class="font-bold text-3xl">0</h2>
+                    <h2 id="rejected_count" class="font-bold text-3xl text-red-600">0</h2>
                 </div>
 
             </div>
@@ -77,20 +77,88 @@
 
         </section>
 
-        
+
         <section id="button-section" class="mb-10">
 
             <div id="buttons" class="flex gap-5 mt-5">
 
-                <button onclick="btnAnimation('btn-all')" id="btn-all" class="btn px-9 bg-blue-500 text-white">All</button>
-                <button onclick="btnAnimation('btn-interview-page')" id="btn-interview-page" class="btn px-9">Interview</button>
-                <Button onclick="btnAnimation('btn-rejected-page')" id="btn-rejected-page" class="btn px-9 ">Rejected</Button>
+                <button onclick="btnAnimation('btn-all')" id="btn-all"
+                    class="btn px-9 bg-blue-500 text-white">All</button>
+                <button onclick="btnAnimation('btn-interview-page')" id="btn-interview-page"
+                    class="btn px-9">Interview</button>
+                <Button onclick="btnAnimation('btn-rejected-page')" id="btn-rejected-page"
+                    class="btn px-9 ">Rejected</Button>
             </div>
 
 
         </section>
 
-        
+
+        <section id="card-section">
+
+
+            <div id="all-card-container">
+
+                <!-- Card-1 - Mobile First Corp -->
+                <div id="card" class=" bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+
+                    <button id="delete-btn"
+                        class="absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-red-300">
+                        <img src="./Resources/Trash.png" alt="">
+                    </button>
+
+
+                    <h2 class="text-xl font-semibold text-blue-900">Mobile First Corp</h2>
+
+                    <p class="text-gray-600 mt-1">React Native Developer</p>
+
+
+                    <p class="text-gray-500 mt-3">Remote • Full-time • $130,000 - $175,000</p>
+
+
+
+                    <div class="status-div">
+
+                        <p id="status-badge"
+                            class="mt-4 inline-block px-4 py-2 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+                            NOT APPLIED</p>
+
+                    </div>
+
+
+                    <p class="text-gray-600 mt-4">Build cross-platform mobile applications using React Native.
+                        Work on products used by millions of users worldwide.</p>
+
+
+                    <div class="flex gap-3 mt-6">
+
+                        <button id="btn-interview"
+                            class="px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">INTERVIEW</button>
+
+                        <button id="btn-rejected"
+                            class="px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">REJECTED</button>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+         
+
+
+            </div>
+
+        </section>
+
+
+
 
 
     </main>
