@@ -1,5 +1,11 @@
 console.log("Alhamdulillah");
 
+function getById(id)
+{
+    const element = document.getElementById(id);
+    return element;
+}
+
 
 const buttonAll = document.getElementById('btn-all');
 // console.log(buttonAll.classList);
@@ -10,11 +16,6 @@ const buttonInterviewPage = document.getElementById('btn-interview-page');
 const buttonRejectedPage = document.getElementById('btn-rejected-page');
 
 // console.log(buttonRejectedPage);
-
-let interviewList = [];
-let rejectedList =[];
-
-
 
 function btnAnimation(id)
 {
@@ -82,8 +83,6 @@ for(let deleteButton of delete_buttons)
         countSetter();
     })
 }
-
-// interview section 
 
 
 
