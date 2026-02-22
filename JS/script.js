@@ -379,7 +379,7 @@ function renderInterview()
         let div = document.createElement('div');
 
         div.innerHTML = `
-        <div class=" rounded-xl border border-gray-200 p-6 relative mt-5 mb-5 border-l-5 border-green-500 bg-green-50">
+        <div class=" rounded-xl border  p-6 relative mt-5 mb-5 border-l-5 border-green-500 bg-green-50">
 
             <button class="delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-red-300">
                 <img src="./Resources/Trash.png" alt="">
@@ -465,7 +465,7 @@ function renderRejected()
             </p>
 
             <div class="status-div">
-                <p class="status-badge mt-4 inline-block px-4 py-2 text-sm font-bold border border-[3px] border-red-600 bg-red-300 text-red-800 rounded-md">
+                <p class="status-badge mt-4 inline-block px-4 py-2 text-sm font-bold  border-[3px] border-red-600 bg-red-300 text-red-800 rounded-md">
                     Rejected
                 </p>
             </div>
