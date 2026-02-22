@@ -23,6 +23,31 @@ const buttonRejectedPage = document.getElementById('btn-rejected-page');
 
 // console.log(buttonRejectedPage);
 
+
+        const ltlAll = getById('littleAll');
+        const liInterview = getById('littleInterview');
+        const liReject = getById('littleReject');
+
+    function littleCountSetter(id)
+    {
+
+        ltlAll.classList.add('hidden');
+        liInterview.classList.add('hidden');
+        liReject.classList.add('hidden');
+
+
+        const currentSection = getById(id);
+
+        currentSection.classList.remove('hidden');
+    }
+
+
+
+
+
+
+
+
 function btnAnimation(id)
 {
     const all_card_container = getById('all-card-container');
@@ -37,11 +62,16 @@ function btnAnimation(id)
 
     clickedBtn.classList.add('bg-blue-500','text-white');
 
+    
+
     if(id=='btn-all')
     {
         all_card_container.classList.remove('hidden');
         intervew_card_container.classList.add('hidden');
         rejectCardContainer.classList.add('hidden');
+
+        littleCountSetter('littleAll');
+
     }
 
     else if(id=='btn-interview-page')
@@ -49,6 +79,12 @@ function btnAnimation(id)
         all_card_container.classList.add('hidden');
         intervew_card_container.classList.remove('hidden');
         rejectCardContainer.classList.add('hidden');
+
+        littleCountSetter('littleInterview');
+
+        
+
+        
     }
     else if(id=='btn-rejected-page')
     { 
@@ -56,26 +92,29 @@ function btnAnimation(id)
         all_card_container.classList.add('hidden');
         intervew_card_container.classList.add('hidden');
         rejectCardContainer.classList.remove('hidden');
+
+        littleCountSetter('littleReject');
+
+       
         
     }
 }
 
 const allContainer = getById('all-card-container');
 
-
 let allCardCount = getById('total-count');
-let littleCount = getById('little-count');
-
+let forLittle=0;
 countSetter();
-
+countInterview();
+countRejected()
 function countSetter()
 {
     console.log("count setter Running!");
 
     const count = allContainer.children.length;
+    forLittle=count;
 
     allCardCount.innerText = count;
-    littleCount.innerText = count;
 
     if(count === 0)
     {
@@ -85,6 +124,7 @@ function countSetter()
         noJobSection.classList.remove('hidden');
 
     }
+    ltlAll.innerHTML=`<p id="littleAll" class="">${count} Jobs</p>`
 }
 
 function countInterview()
@@ -92,31 +132,27 @@ function countInterview()
     let interview_count = interviewList.length;
     // console.log(interview_count);
     document.getElementById('interview-count').innerText=interview_count;
-    
+
+    const count = allContainer.children.length;
+
+
+    liInterview.innerHTML=`<p id="littleInterview" class="">${interview_count} of ${count} Jobs</p>`
 }
 
 function countRejected()
 {
     const rejectedCount = rejectList.length;
     getById('rejected_count').innerText = rejectedCount;
+
+    const count = allContainer.children.length;
+
+
+    liReject.innerHTML=`<p id="littleInterview" class="">${rejectedCount} of ${count} Jobs</p>`
 }
 
 
 
-// Delete Button Functionality
 
-const delete_buttons = document.querySelectorAll('.delete');
-
-// console.log(delete_buttons);
-
-for(let deleteButton of delete_buttons)
-{
-    deleteButton.addEventListener('click',function()
-    {
-        deleteButton.parentElement.remove();
-        countSetter();
-    })
-}
 
 const mainContainer = document.querySelector("main");
 
@@ -178,7 +214,7 @@ mainContainer.addEventListener('click', function(event)
         
    }
 
-   if(event.target.classList.contains('btn-rejected'))
+   else if(event.target.classList.contains('btn-rejected'))
    {
     const baap = event.target.parentNode.parentNode;
 
@@ -209,6 +245,7 @@ mainContainer.addEventListener('click', function(event)
 
     if(!rejectedExist)
     {
+        interviewList=interviewList.filter(item => item.companyName!=cardInfo.companyName);
         rejectList.push(cardInfo);
 
         const badge = baap.querySelector('.status-badge');
@@ -220,7 +257,61 @@ mainContainer.addEventListener('click', function(event)
 
         renderRejected();
         countRejected();
+        renderInterview();
+        countInterview();
     }
+   }
+
+   else if((event.target.classList.contains('delete'))||(event.target.parentNode.classList.contains('delete')))
+   {
+
+    //1. First e je card er delete e click kora hoise tar parent theke, nam ta anbo,
+    //1. Ekta job delete mane full delete. eta dhore korbo
+    //2 . then ei nam diye filter kore rakhbo intervewList e + rejectedlist e + allList e.\
+
+    // console.log('delte button clicked Nafis!!');
+
+    // parent node dhore remove kore ditam naki array er object theke age filter kore then ra-rander korbo
+
+    //of, first e age card er nam ene interview + rejected section theke delte kori
+
+    let card_container_to_delete = event.target.parentNode;
+
+    if(card_container_to_delete.classList.contains('delete'))
+    {
+        card_container_to_delete=card_container_to_delete.parentNode;
+    }
+
+    // console.log(card_container_to_delete);
+   
+
+
+    const companyName = card_container_to_delete.querySelector('.company-name').innerText;
+    console.log(companyName);
+
+    interviewList= interviewList.filter(item => item.companyName!==companyName);
+    rejectList = rejectList.filter(item =>item.companyName !== companyName);
+
+    const allCards = document.querySelectorAll('.card');
+
+
+   for(let card of allCards)
+   {
+      const c_name =card.querySelector('.company-name').innerText;
+
+      if(c_name===companyName)
+      {
+            card.remove();
+      }
+   }
+
+
+    renderRejected();
+    countRejected();
+    renderInterview();
+    countInterview();
+    countSetter();
+
    }
 
 })
