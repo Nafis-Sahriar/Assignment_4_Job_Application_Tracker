@@ -1,0 +1,57 @@
+1.What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+
+Ans: getElementById is used to catch a speciic element. ID is unique, so when I need an element spcifically, I use 
+get element by id, it returns a single element, On the other hand when we need a banch of same element, we use className, 
+getElementsByClassName gives me all elements that has a similar className. getElementsByClassName returns an HTML Collection, 
+
+Then comes querySelector, and querySelectorAll, 
+
+we use querySelector when we need a single element or only the first element that matches a css style selector we search for.
+inside querySelector we can use id, class, tag etc. but have to maintain the rule of . # , 
+
+querySelectorAll is the same but returns a nodelist of all elements that match a css style selector. We use querySelector and 
+querySelectorAll mainly when we want easy css style selection. querySelector and querySelectorAll is more aligned with CSS Logic. 
+
+
+2. How do you create and insert a new element into the DOM?
+
+Ans : When I create and isert a new element into the DOM, I basically maintain some steps
+first is creation. I do this with document.createElement then the type of the element like div, p, button, etc. 
+
+Then inside that I add some innerHTML, apply some styles , basically configures it, If I need something that is coming from input, 
+or dynamically calulated, I use ${} , for variable actually, then after finishing all these task , I append this element inside a 
+selected section or div, one thing I have learnt that If I want to add the element at the end of the section, i use append, if I want 
+to add the element at the beginning, i use prepend. and Finally the element is inserted into the DOM . 
+
+
+3. What is Event Bubbling? And how does it work?
+Ans : Event bubbling is an act in the DOM manipulation, where an event starts from the clicked or interacted moment
+and then it bubbles up, towards it parent. one by one. 
+Suppose I have clicked a button that is inside a card, and that card is inside a section, and again that section is inside main, then main 
+is inside body. I only clicked the button that is inside that tiny card, but the event does not stay there . First the button recieves where
+it was clicked , then the event moves towards its parent , the card, after that it moves to the section or div, then main , then body, until 
+it reaches ono top of the document. Sometimes an issue happens, when clicking a child element, this might also trigger or click event on its
+parent if both have eventlisteners. In that cases we have to control this manually. We can Stop it manually. THis is how event Bubbling works
+
+
+4. What is Event Delegation in JavaScript? Why is it useful?
+
+Ans : Event Delegation is a beautiful technique where instead of adding so many event listeners in child elements, we add one listener
+in the parent element, than catch it when the event is bubble up. It works because of event bubbling. 
+To catch that we use target keyword, and if we need to access their parent, we use target.parentNode then if we need again their parent, 
+we keep using parentNode to get the desired element and do operations on that element. It is very useful because inside one listener in main
+we can catch where the click / event was happend and then add if else logic to catch and apply our operations. It lets us write very
+less eventlistener code which enhance the readablity and logic building. I have used this in my project, I loved the process. Mainly, 
+when I understood that it works on the elements that were dynamically created. Thats why it is very useful.
+
+5. What is the difference between preventDefault() and stopPropagation() methods?
+
+Ans : preventDefault stops browser's default action for an event, such as If I click in a link , normally it opens, but if we use 
+prevent default, the event still happens , but the browser does not perform its built in behaviour. So the event runs but the action 
+is cancelled. As example, let i have a form on my webpage, Normally when I click the submit button , the browser automatically gets 
+reloded and send the sends the form data. This reload is browser's default behaviour. But we can stop this from happening by usin
+preventDefault();
+
+On the other hand , stopPropagation is a completely different thing that deals with event bubbling. As we know , bubbling 
+starts from the root element where the event was happend and then bubbles up enitre the document. But this sometimes can create
+problems, so , we use stopPropagation to stop the bubbling action. Basically it stops the event from spreading to other elements. 
