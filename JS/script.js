@@ -123,6 +123,13 @@ function countSetter()
         let noJobSection = getById('no-job');
         noJobSection.classList.remove('hidden');
 
+        let intervew_noJob = getById('no-interview');
+        let reject_noJob =getById('no-rejected');
+
+        intervew_noJob.classList.add('hidden');
+        reject_noJob.classList.add('hidden');
+    
+
     }
     ltlAll.innerHTML=`<p id="littleAll" class="">${count} Jobs</p>`
 }
@@ -165,58 +172,8 @@ mainContainer.addEventListener('click', function(event)
 
    if(event.target.classList.contains('btn-interview'))
    {
-    // console.log("Found the Interview Button");
-
-         const baap = event.target.parentNode.parentNode;
-        //  console.log(baap);
-
-        const companyName = baap.querySelector('.company-name').innerText;
-        // console.log(companyName);
-
-        const jobRole = baap.querySelector('.job-role').innerText;
-        // console.log(jobRole);
-
-        const jobSalary = baap.querySelector('.job-salary').innerText;
-
-        const statusBadge = baap.querySelector('.status-badge').innerText;
-        // console.log(statusBadge);
-
-        const jobTitle = baap.querySelector('.job-title').innerText;
-        // console.log(jobTitle);
-
-        let cardInfo ={
-            companyName,
-            jobRole,
-            jobSalary,
-            statusBadge,
-            jobTitle
-        }
-
-        console.log(cardInfo);
-
-        const interviewExist = interviewList.find(item=> item.companyName == cardInfo.companyName);
-
-        if(!interviewExist)
-        {
-            interviewList.push(cardInfo);
-            
-            const badge = baap.querySelector('.status-badge');
-            badge.innerText='Interview';
-            badge.classList.add('bg-green-300', 'text-green-800', 'border-4', 'border-green-700', 'font-bold', 'text-md');
-            badge.classList.remove('bg-red-300', 'text-red-800','border-2','border-red-500');
-            
-            
-            
-            countInterview();
-            renderInterview();
-        }
-        
-        
-   }
-
-   else if(event.target.classList.contains('btn-rejected'))
-   {
     const baap = event.target.parentNode.parentNode;
+    // console.log(baap);
 
     const companyName = baap.querySelector('.company-name').innerText;
     // console.log(companyName);
@@ -226,40 +183,122 @@ mainContainer.addEventListener('click', function(event)
 
     const jobSalary = baap.querySelector('.job-salary').innerText;
     // console.log(jobSalary);
-    const statusBadge = baap.querySelector('.status-badge').innerText;
-    // console.log(statusBadge);
 
     const jobTitle = baap.querySelector('.job-title').innerText;
-    // console.log(jobTitle); 
+    // console.log(jobTitle);
+
+    const badge = baap.querySelector('.status-badge');
+    // console.log(badge);
 
     let cardInfo = 
     {
         companyName,
         jobRole,
         jobSalary,
-        statusBadge,
+        badge,
         jobTitle
     };
 
-    const rejectedExist= rejectList.find(item =>item.companyName===cardInfo.companyName);
 
-    if(!rejectedExist)
+    interviewList = interviewList.filter(item => item.companyName !== companyName);
+    rejectList = rejectList.filter(item => item.companyName !== companyName);
+
+    interviewList.push(cardInfo);
+
+    const allCards = document.querySelectorAll('.card');
+
+
+    for(let card of allCards)
     {
-        interviewList=interviewList.filter(item => item.companyName!=cardInfo.companyName);
-        rejectList.push(cardInfo);
+        const name = card.querySelector('.company-name').innerText;
 
-        const badge = baap.querySelector('.status-badge');
-        badge.innerText='Rejected';
-        badge.classList.remove('bg-green-300','text-green-800');
-        badge.classList.add('bg-red-300', 'text-red-800','border-2','border-red-500' );
+        if(name === companyName)
+        {
+            const all_section_Badge = card.querySelector('.status-badge');
 
+            card.classList.remove('bg-white','bg-red-50','border-red-600');
+            card.classList.add('bg-green-50','border-l-5','border-green-600');
 
+            all_section_Badge.innerText = "Interview";
 
-        renderRejected();
-        countRejected();
-        renderInterview();
-        countInterview();
+        
+            all_section_Badge.classList.add('bg-green-300','text-green-800','border-4','border-green-700','font-bold','text-md');
+            all_section_Badge.classList.remove('bg-red-300','text-red-800','border-2','border-red-500');
+        }
     }
+    renderInterview();
+    renderRejected();
+    countInterview();
+    countRejected();
+}
+
+   else if(event.target.classList.contains('btn-rejected'))
+   {
+    const baap = event.target.parentNode.parentNode;
+
+    const companyName=baap.querySelector('.company-name').innerText;
+    // console.log(companyName);
+    const jobRole= baap.querySelector('.job-role').innerText;
+    // console.log(jobRole);
+
+    const jobSalary =baap.querySelector('.job-salary').innerText;
+    // console.log(jobSalary);
+
+    const badge =baap.querySelector('.status-badge');
+    // console.log(badge);
+
+    const jobTitle =baap.querySelector('.job-title').innerText;
+    // console.log(jobTitle);
+
+    let cardInfo = 
+    {
+        companyName,
+        jobRole,
+        jobSalary,
+        badge,
+        jobTitle,
+    };
+
+    // intervew list e thakte parbe na, tw amake interview list theke khali korte hobe
+    interviewList = interviewList.filter(item => item.companyName !== companyName);
+
+    // rejected list e jodi theke thake setao remove kore diye notun kore rakhbo
+    // tahole ar if else diye check korte hobe na.
+    rejectList = rejectList.filter(item => item.companyName !== companyName);
+    rejectList.push(cardInfo);
+
+    // ebar main section er badge update korte hobe . 
+
+    const allCards = document.querySelectorAll('.card');
+
+    for(let card of allCards)
+    {
+       const name=card.querySelector('.company-name').innerText;
+
+        if(name===companyName)
+        {
+            const all_section_Badge = card.querySelector('.status-badge');
+
+            // console.log(card);
+            card.classList.remove('bg-white','bg-green-50','border-green-600');
+            card.classList.add('bg-red-50','border-l-5','border-red-600');
+
+            all_section_Badge.innerText = "Rejected";
+
+            all_section_Badge.classList.add('bg-red-300','text-red-800','border-[4px]','border-red-500');
+
+
+            all_section_Badge.classList.remove('bg-green-300','text-green-800','border-4','border-green-700','font-bold','text-md');
+        }}
+
+
+
+
+
+    renderInterview();
+    renderRejected();
+    countInterview();
+    countRejected();
    }
 
    else if((event.target.classList.contains('delete'))||(event.target.parentNode.classList.contains('delete')))
@@ -340,13 +379,13 @@ function renderInterview()
         let div = document.createElement('div');
 
         div.innerHTML = `
-        <div class="bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+        <div class=" rounded-xl border border-gray-200 p-6 relative mt-5 mb-5 border-l-5 border-green-500 bg-green-50">
 
             <button class="delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-red-300">
                 <img src="./Resources/Trash.png" alt="">
             </button>
 
-            <h2 class="company-name text-xl font-semibold text-blue-900">
+            <h2 class="company-name text-xl font-semibold text-[#002C5C]">
                 ${interview.companyName}
             </h2>
 
@@ -407,13 +446,13 @@ function renderRejected()
         let div = document.createElement('div');
 
         div.innerHTML = `
-        <div class="bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+        <div class=" rounded-xl border p-6 relative mt-5 mb-5 border-l-5 border-red-600 bg-red-50">
 
             <button class="delete absolute top-4 right-4 p-2 rounded-full border border-gray-200 hover:bg-red-300">
                 <img src="./Resources/Trash.png" alt="">
             </button>
 
-            <h2 class="company-name text-xl font-semibold text-blue-900">
+            <h2 class="company-name text-xl font-semibold text-[#002C5C]">
                 ${rejected.companyName}
             </h2>
 
@@ -434,6 +473,14 @@ function renderRejected()
             <p class="job-title text-gray-600 mt-4">
                 ${rejected.jobTitle}
             </p>
+
+               <button class="btn-interview px-5 py-2 rounded-md border border-green-500 text-green-600 font-medium hover:bg-green-50">
+                    INTERVIEW
+                </button>
+
+                <button class="btn-rejected px-5 py-2 rounded-md border border-red-500 text-red-600 font-medium hover:bg-red-50">
+                    REJECTED
+                </button>
 
         </div>
         `;
@@ -494,6 +541,23 @@ function renderRejected()
 
 */
 
+
+// my PlayGround --> Dekhi Notun kore job add korbo In sha Allah || Submit er por.
+// Section -- Input New Job
+
+
+//plan
+/**
+ * Daisy UI theke Ekta form ba input kichu ekta ante hobe. 
+ * First e input anbo.
+ * Payoo App er moto kore ekta machiene banabo, input er text anar jonno
+ * machiene diye text gulo ene variable e rakhte hobe
+ * Variable e rakhar por , create element diye div banate hobe
+ * Div er vitor innertext, exact same uporer card er moto dibo
+ * then ${} use kore variable er text gulo boshabo, 
+ * Then appen child kroe dibo , allcardcontainer div er moddhe. 
+ * Done. 
+ */
 
 
 

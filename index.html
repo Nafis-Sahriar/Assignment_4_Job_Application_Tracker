@@ -39,7 +39,7 @@
 
         <section id="header" class="w-[11/12] sticky top-0 z-10 bg-[#F8FAFC]">
 
-            <h1 id="title-text" class="font-bold text-4xl text-[#002C5C] mt-9">Job Application Tracker</h1>
+            <h1 id="title-text" class="font-bold text-4xl text-[#002C5C] pt-9">Job Application Tracker</h1>
 
 
             <div id="count-container" class="grid grid-cols-3 gap-3 py-5">
@@ -71,11 +71,11 @@
 
             <h1 class="font-bold text-2xl">Available Jobs</h1>
 
-           <div>
-                            <p id="littleAll" class="">0 Jobs</p>
-                            <p id="littleInterview" class="hidden">0 of 0 Jobs</p>
-                            <p id="littleReject" class="hidden">0 of 0 Jobs</p>
-           </div>
+            <div>
+                <p id="littleAll" class="">0 Jobs</p>
+                <p id="littleInterview" class="hidden">0 of 0 Jobs</p>
+                <p id="littleReject" class="hidden">0 of 0 Jobs</p>
+            </div>
 
         </section>
 
@@ -132,7 +132,7 @@
             <div id="rejected-card-container"></div>
 
             <div id="no-rejected" class="hidden">
-                  <div class="flex flex-col space-y-5 justify-center items-center py-20">
+                <div class="flex flex-col space-y-5 justify-center items-center py-20">
                     <img src="./Resources/assignment_7959593 1.png" alt="">
                     <h1 class="text-2xl">No jobs available</h1>
                     <p>Check back soon for new job opportunities</p>
@@ -156,7 +156,7 @@
                     </button>
 
 
-                    <h2 class=" company-name text-xl font-semibold text-blue-900">Mobile First Corp</h2>
+                    <h2 class=" company-name text-xl font-semibold text-[#002C5C]">Mobile First Corp</h2>
 
                     <p class="job-role text-gray-600 mt-1">React Native Developer</p>
 
@@ -209,7 +209,7 @@
                     </button>
 
 
-                    <h2 class="text-xl company-name font-semibold text-blue-900">WebFlow Agency</h2>
+                    <h2 class="text-xl company-name font-semibold text-[#002C5C]">WebFlow Agency</h2>
 
                     <p class="job-role text-gray-600 mt-1">Web Designer & Developer</p>
 
@@ -252,7 +252,7 @@
                 </div>
 
                 <!-- Card-3 - DataViz Solutions -->
-                 <div id="" class="card bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
+                <div id="" class="card bg-white rounded-xl border border-gray-200 p-6 relative mt-5 mb-5">
 
                     <button id="delete-btn"
                         class=" delete absolute top-4 right-4 p-2 rounded-full border border-gray-200  hover:bg-red-200">
@@ -260,7 +260,7 @@
                     </button>
 
 
-                    <h2 class="company-name text-xl font-semibold text-blue-900">DataViz Solutions</h2>
+                    <h2 class="company-name text-xl font-semibold text-[#002C5C]">DataViz Solutions</h2>
 
                     <p class="job-role text-gray-600 mt-1">Data Visualization Specialist</p>
 
@@ -317,7 +317,7 @@
                     </button>
 
 
-                    <h2 class="company-name text-xl font-semibold text-blue-900">CloudFirst Inc</h2>
+                    <h2 class="company-name text-xl font-semibold text-[#002C5C]">CloudFirst Inc</h2>
 
                     <p class="job-role text-gray-600 mt-1">Backend Developer</p>
 
@@ -373,7 +373,7 @@
                     </button>
 
 
-                    <h2 class="company-name text-xl font-semibold text-blue-900">Innovation Labs</h2>
+                    <h2 class="company-name text-xl font-semibold text-[#002C5C]">Innovation Labs</h2>
 
                     <p class="job-role text-gray-600 mt-1">UI/UX Engineer</p>
 
@@ -429,7 +429,7 @@
                     </button>
 
 
-                    <h2 class="company-name text-xl font-semibold text-blue-900">MegaCorp Solutions</h2>
+                    <h2 class="company-name text-xl font-semibold text-[#002C5C]">MegaCorp Solutions</h2>
 
                     <p class="job-role text-gray-600 mt-1">JavaScript Developer</p>
 
@@ -486,7 +486,7 @@
                     </button>
 
 
-                    <h2 class="company-name text-xl font-semibold text-blue-900">StartupXYZ</h2>
+                    <h2 class="company-name text-xl font-semibold text-[#002C5C]">StartupXYZ</h2>
 
                     <p class="job-role text-gray-600 mt-1">Full Stack Engineer</p>
 
@@ -541,7 +541,7 @@
                     </button>
 
 
-                    <h2 class="company-name text-xl font-semibold text-blue-900">TechCorp Industries</h2>
+                    <h2 class="company-name text-xl font-semibold text-[#002C5C]">TechCorp Industries</h2>
 
                     <p class="job-role text-gray-600 mt-1">Senior Frontend Developer</p>
 
@@ -595,6 +595,42 @@
             </div>
 
         </section>
+
+         <!-- <section id="inputCard" class="w-11/12 mx-auto">
+
+
+            <div class="border">
+
+
+                <fieldset class="fieldset flex flex-col justify-center items-center">
+
+                    <h1 class="text-4xl">Create New Job</h1>
+
+                    <div class="">
+                        <legend class="fieldset-legend">Company Name</legend>
+                        <input type="text" class="input" placeholder="Enter Company Name" />
+                    </div>
+                    <div>
+                        <legend class="fieldset-legend">Job Role</legend>
+                        <input type="text" class="input" placeholder="Enter Job Role" />
+                    </div>
+                    <div>
+                        <legend class="fieldset-legend">Job Salary & Other Infos</legend>
+                        <input type="text" class="input" placeholder="Enter Job Salary And Other Informatin" />
+                    </div>
+                    <div>
+                        <legend class="fieldset-legend">Post Description</legend>
+                        <input type="text" class="input" placeholder="Enter Short Description of job" />
+                    </div>
+
+                    <button class="btn btn-primary w-[120px] mt-10 mx-auto">Add Job</button>
+
+                </fieldset>
+
+            </div>
+
+
+        </section> -->
     </main>
 
     <script src="./JS/script.js"></script>
